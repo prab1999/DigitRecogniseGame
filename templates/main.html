@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<title>Hand Written Digit Recognition using TensorFlow.js</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/digit.css') }}">
+</head>
+<body>
+	<main>
+		<div class="modal fade" id="myModal" style="display: block;background-color: rgb(150, 119, 252,0.8);">
+			<div class="modal-dialog" style="position:absolute;float: left;left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%); width: fit-content;height: fit-content;">
+			  <div class="modal-content">
+			  
+				<!-- Modal Header -->
+				
+				
+				<!-- Modal body -->
+				
+				<!-- Modal footer -->
+				<div class="modal-body" style="width: fit-content;height: fit-content;" >
+				  <button type="button" class="btn btn-info btn-lg" data-dismiss="modal" onclick="startGame()">
+					<span class="glyphicon glyphicon-play-circle"></span> <span id="start">Play</span>
+				  </button>
+				  <div id="prevScorecard" hidden>
+					  Your Previous score :<b> <span id="prevscore"></span></b>
+				  </div>
+				</div>
+				
+				
+			  </div>
+			</div>
+		  </div>
+		<div class="container mt-1">
+			
+			<div class="digit-demo-container">
+				<h3>Hand Written Digit Recognition</h3>
+					<div class="flex-two">
+						<div id="canvas_box_wrapper" >
+								<div  >Score : <b><span id="score"></span></b></div>
+								<div  >Write <b><span id="input"></span></b></div>
+								<div id="canvas_box">
+
+								</div>
+								<div  >You Wrote <b><span id="output"></span></b></div>
+								<div>
+									<button id="clear-button"  class="btn btn-dark">Clear</button>
+									<button id="predict-button" class="btn btn-dark">Predict</button>
+								</div>
+								<div id="countdown"></div>				
+						</div>
+						
+					</div>
+			</div>
+		</div>
+	</main>   
+
+	<script src="{{ url_for('static', filename='js/digit-recognition.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/functions.js') }}"></script>
+</body>
+</html>
